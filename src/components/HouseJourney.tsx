@@ -49,7 +49,7 @@ export function HouseJourney() {
         <div className="journey__shade" aria-hidden="true" />
 
         <div className="journey__panel journey__panel--0">
-          <div className="home-hero__label"><span>Pearl Studio</span><span>Architecture / Construction / Design</span></div>
+          <span className="journey__eyebrow">Pearl Studio / Architecture / Construction / Design</span>
           <h1>We build<br /><em>what endures.</em></h1>
           <p>Architecture, construction and spaces designed with precision.</p>
           <div className="journey__ctas">

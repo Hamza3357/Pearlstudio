@@ -567,7 +567,7 @@
 .journey[data-stage="3"] .journey__panel--3 { opacity: 1; transform: none; pointer-events: auto; }
 .journey--static .journey__panel--0 { opacity: 1; transform: none; pointer-events: auto; }
 .journey--static .journey__panel--1, .journey--static .journey__panel--2, .journey--static .journey__panel--3, .journey--static .journey__hint { display: none; }
-.journey__progress { position: absolute; right: clamp(1.25rem, 5vw, 5rem); top: 50%; transform: translateY(-50%); display: grid; gap: .8rem; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-foreground); }
+.journey__progress { position: absolute; right: clamp(1.25rem, 5vw, 5rem); top: 7rem; display: grid; gap: .8rem; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-foreground); }
 .journey__progress span { opacity: .35; transition: opacity .4s; border-right: 1px solid currentColor; padding-right: .75rem; text-align: right; }
 .journey__progress span.is-on { opacity: 1; color: var(--foreground); }
 .journey__hint { position: absolute; left: 50%; bottom: 1.5rem; transform: translateX(-50%); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted-foreground); transition: opacity .4s; }
