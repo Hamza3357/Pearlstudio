@@ -546,3 +546,36 @@
   .services-hero h1, .contact-hero h1 { margin-top: .8rem; font-size: clamp(2.85rem, 12.5vw, 4rem); }
   .services-hero > div > p, .contact-hero > div > p { margin-top: 1rem; font-size: .76rem; line-height: 1.55; }
 }
+
+/* ---- Home scroll journey ---- */
+.journey { position: relative; height: 480vh; background: #0f0f0e; }
+.journey--static { height: 100vh; }
+.journey__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.journey__canvas { position: absolute; inset: 0; }
+.journey__shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, color-mix(in oklab, var(--background) 80%, transparent) 0%, transparent 60%); }
+.journey__panel { position: absolute; left: clamp(1.25rem, 5vw, 5rem); bottom: clamp(4.5rem, 12vh, 8rem); max-width: min(40rem, 88vw); color: var(--foreground); opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; pointer-events: none; }
+.journey__panel h1, .journey__panel h2 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: clamp(2.6rem, 7vw, 6.5rem); line-height: .95; letter-spacing: -.02em; margin: 1rem 0; text-transform: uppercase; }
+.journey__panel em { color: var(--primary); }
+.journey__panel p { color: var(--muted-foreground); max-width: 26rem; margin-bottom: 1.5rem; }
+.journey__eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted-foreground); }
+.journey__ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
+.journey__panel--3 { left: auto; right: clamp(1.25rem, 5vw, 5rem); text-align: right; }
+.journey__panel--3 h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
+.journey[data-stage="0"] .journey__panel--0,
+.journey[data-stage="1"] .journey__panel--1,
+.journey[data-stage="2"] .journey__panel--2,
+.journey[data-stage="3"] .journey__panel--3 { opacity: 1; transform: none; pointer-events: auto; }
+.journey--static .journey__panel--0 { opacity: 1; transform: none; pointer-events: auto; }
+.journey--static .journey__panel--1, .journey--static .journey__panel--2, .journey--static .journey__panel--3, .journey--static .journey__hint { display: none; }
+.journey__progress { position: absolute; right: clamp(1.25rem, 5vw, 5rem); top: 7rem; display: grid; gap: .8rem; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-foreground); }
+.journey__progress span { opacity: .35; transition: opacity .4s; border-right: 1px solid currentColor; padding-right: .75rem; text-align: right; }
+.journey__progress span.is-on { opacity: 1; color: var(--foreground); }
+.journey__hint { position: absolute; left: 50%; bottom: 1.5rem; transform: translateX(-50%); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted-foreground); transition: opacity .4s; }
+.journey:not([data-stage="0"]) .journey__hint { opacity: 0; }
+@media (max-width: 767px) {
+  .journey { height: 400vh; }
+  .journey__progress { display: none; }
+  .journey__shade { background: linear-gradient(0deg, color-mix(in oklab, var(--background) 85%, transparent) 0%, transparent 65%); }
+  .journey__panel--3 { left: clamp(1.25rem, 5vw, 5rem); text-align: left; }
+}
+.journey__panel .home-hero__label { position: static; }
