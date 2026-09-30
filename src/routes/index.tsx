@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
 
 // IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  const featured = projects[0];
+  const featured = projects[0]!;
   return (
     <>
       <HouseJourney />

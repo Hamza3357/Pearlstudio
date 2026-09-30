@@ -22,17 +22,17 @@ function CameraRig({ progress }: { progress: MutableRefObject<number> }) {
   const cur = { v: 0 };
   useFrame((_, raw) => {
     const dt = Math.min(raw, 0.05);
-    cur.v = (camera.userData.p ?? 0) as number;
+    cur.v = (camera.userData["p"] ?? 0) as number;
     cur.v += (progress.current - cur.v) * (1 - Math.exp(-6 * dt));
-    camera.userData.p = cur.v;
+    camera.userData["p"] = cur.v;
     const p = cur.v;
     let i = 0;
-    while (i < KEYS.length - 2 && p > KEYS[i + 1][0]) i++;
-    const [p0, c0, l0] = KEYS[i];
-    const [p1, c1, l1] = KEYS[i + 1];
+    while (i < KEYS.length - 2 && p > KEYS[i + 1]![0]) i++;
+    const [p0, c0, l0] = KEYS[i]!;
+    const [p1, c1, l1] = KEYS[i + 1]!;
     const t = smooth(Math.min(1, Math.max(0, (p - p0) / (p1 - p0))));
-    pos.copy(a.set(...c0)).lerp(b.set(...c1), t);
-    look.copy(a.set(...l0)).lerp(b.set(...l1), t);
+    pos.copy(a.set(c0[0], c0[1], c0[2])).lerp(b.set(c1[0], c1[1], c1[2]), t);
+    look.copy(a.set(l0[0], l0[1], l0[2])).lerp(b.set(l1[0], l1[1], l1[2]), t);
     camera.position.copy(pos);
     camera.lookAt(look);
   });
