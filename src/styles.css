@@ -578,3 +578,4 @@
   .journey__shade { background: linear-gradient(0deg, color-mix(in oklab, var(--background) 85%, transparent) 0%, transparent 65%); }
   .journey__panel--3 { left: clamp(1.25rem, 5vw, 5rem); text-align: left; }
 }
+.journey__panel .home-hero__label { position: static; }
