@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PearlButton } from "@/components/PearlButton";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ThreeStage } from "@/components/ThreeStage";
+import { HouseJourney } from "@/components/HouseJourney";
 import { projects, services } from "@/lib/pearl-data";
 
 // No head() here: the home route inherits title/description/og/twitter from
@@ -29,16 +29,7 @@ function Index() {
   const featured = projects[0];
   return (
     <>
-      <section className="home-hero">
-        <ThreeStage />
-        <div className="home-hero__measure" aria-hidden="true">ELEV. 01 / 33.6844° N</div>
-        <div className="home-hero__label"><span>Pearl Studio</span><span>Architecture / Construction / Design</span></div>
-        <div className="home-hero__title"><h1>We build<br /><em>what endures.</em></h1></div>
-        <div className="home-hero__footer">
-          <p>Architecture, construction and spaces<br />designed with precision.</p>
-          <div><PearlButton to="/projects" tone="light">Explore our work</PearlButton><PearlButton to="/contact" tone="outline">Start a project</PearlButton></div>
-        </div>
-      </section>
+      <HouseJourney />
 
       <section className="home-intro">
         <div className="home-intro__index">01 / Studio</div>
