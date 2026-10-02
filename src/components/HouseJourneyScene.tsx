@@ -18,11 +18,9 @@ const KEYS: Key[] = [
 ];
 const MOBILE_START: Key = [0, [9, 4.2, 25], [0.8, 2.2, -3]];
 
+
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const look = new Vector3();
-
-
-
 
 function CameraRig({
   progress,
